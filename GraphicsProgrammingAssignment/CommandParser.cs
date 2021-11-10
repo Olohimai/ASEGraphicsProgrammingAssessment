@@ -68,6 +68,17 @@ namespace GraphicsProgrammingAssignment
                                 MessageBox.Show("invalid parameter");
                         }
                         break;
+                    case "fill":
+                        switch (commandParts[1])
+                        {
+                            case "on":  // case Fill shape is on
+                                draw.fill = true;
+                                break;
+                            case "off": // case Fill shape is off
+                                draw.fill = false;
+                                break;
+                        }
+                        break;
                     default:
                         break;
                 }
