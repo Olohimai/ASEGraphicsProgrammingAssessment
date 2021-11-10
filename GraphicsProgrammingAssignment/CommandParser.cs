@@ -172,6 +172,7 @@ namespace GraphicsProgrammingAssignment
                                 draw.fill = false;
                                 break;
                         }
+                        break;
                     case "pen":
                         switch (commandParts[1].ToLower())
                         {
@@ -191,8 +192,11 @@ namespace GraphicsProgrammingAssignment
                             default:
                                 draw.color = Pens.Black;
                                 break;
-
                         }
+                        break;
+                    case "clear":
+                        // Clears screen with Gray background.
+                        g.Clear(System.Drawing.Colour.White);
                         break;
                     default:
                         break;
