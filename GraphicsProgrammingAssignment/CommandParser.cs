@@ -120,9 +120,36 @@ namespace GraphicsProgrammingAssignment
                         else
                         {
                             MessageBox.Show("invalid parameter enter a valid parameter");
-                        } 
+                        }
                         break;
 
+                    case "drawto":
+                        if (commandParts.Length == 3)
+                        {
+                            if (int.TryParse(commandParts[1], out int x) && int.TryParse(commandParts[2], out int y))
+                                new Line(draw).drawLine(g, x, y);
+
+                            else
+                                MessageBox.Show("Invalid parameter, Enter a Valid Parameter");
+                        }
+                        else if (commandParts.Length == 2)
+                        {
+                            try
+                            {
+                                var (x, y) = ParsePoint(commandParts[1]);
+                                new Line(draw).drawLine(g, x, y);
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Invalid coordinate, Enter a Valid coordinate");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("invalid parameter");
+                        }
+
+                        break;
                     case "fill":
                         switch (commandParts[1])
                         {
