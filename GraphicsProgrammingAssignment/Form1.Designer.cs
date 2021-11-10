@@ -79,6 +79,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox3.Location = new System.Drawing.Point(60, 626);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(466, 31);
