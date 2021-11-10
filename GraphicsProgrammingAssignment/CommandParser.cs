@@ -41,6 +41,12 @@ namespace GraphicsProgrammingAssignment
                 throw new Exception();
             }
         }
+
+        public Point ParseToMSPoint(string point)
+        {
+            var (x, y) = ParsePoint(point);
+            return new Point(x, y);
+        }
         public void parseCommand(string userInput)
         {
             //String.Split method
@@ -65,9 +71,58 @@ namespace GraphicsProgrammingAssignment
                             if (int.TryParse(commandParts[1], out int radius))
                                 new Circle(draw).DrawCircle(g, radius);
                             else
-                                MessageBox.Show("invalid parameter");
+                                MessageBox.Show("Invalid parameter Entered, Enter a Valid Parameter");
                         }
                         break;
+                    case "triangle":
+                        if (commandParts.Length == 4)
+                        {
+                            try
+                            {
+                                Point point1 = ParseToMSPoint(commandParts[1]);
+                                Point point2 = ParseToMSPoint(commandParts[2]);
+                                Point point3 = ParseToMSPoint(commandParts[3]);
+                                new Triangle(draw).drawTriangle(g, point1, point2, point3);
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Invalid coordinate Entered, Enter a Valid coordinates");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid parameter Entered");
+                        }
+                        break;
+
+                    case "rectangle":
+                        // Create rectangle.
+                        if (commandParts.Length == 3)
+                        {
+                            if (int.TryParse(commandParts[1], out int x) && int.TryParse(commandParts[2], out int y))
+                                new Rectangle(draw).drawRectangle(g, x, y);
+
+                            else
+                                MessageBox.Show("invalid parameter");
+                        }
+                        else if (commandParts.Length == 2)
+                        {
+                            try
+                            {
+                                var (x, y) = ParsePoint(commandParts[1]);
+                                new Rectangle(draw).drawRectangle(g, x, y);
+                            }
+                            catch
+                            {
+                                MessageBox.Show("invalid coordinate");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("invalid parameter enter a valid parameter");
+                        } 
+                        break;
+
                     case "fill":
                         switch (commandParts[1])
                         {
