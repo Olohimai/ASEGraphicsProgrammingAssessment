@@ -196,7 +196,7 @@ namespace GraphicsProgrammingAssignment
                         break;
                     case "clear":
                         // Clears screen with Gray background.
-                        g.Clear(System.Drawing.Colour.White);
+                        g.Clear(System.Drawing.Color.White);
                         break;
                     case "reset":
                         // Resets the location of the shape to its initial coordinate.
