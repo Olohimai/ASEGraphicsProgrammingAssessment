@@ -146,9 +146,21 @@ namespace GraphicsProgrammingAssignment
                         }
                         else
                         {
-                            MessageBox.Show("invalid parameter");
+                            MessageBox.Show("invalid parameter, Enter a Valid Parameter");
                         }
 
+                        break;
+
+                    case "moveto":
+                        //Moves the shape to the specified coordinates on the screen.
+                        try
+                        {
+                            (draw.x, draw.y) = ParsePoint(commandParts[1]);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("invalid coordinate, Enter valid coordinates");
+                        }
                         break;
                     case "fill":
                         switch (commandParts[1])
@@ -159,6 +171,27 @@ namespace GraphicsProgrammingAssignment
                             case "off": // case Fill shape is off
                                 draw.fill = false;
                                 break;
+                        }
+                    case "pen":
+                        switch (commandParts[1].ToLower())
+                        {
+                            //Sets the Pen object to a defined set of color
+                            case "yellow":
+                                draw.color = Pens.Yellow;
+                                break;
+                            case "red":
+                                draw.color = Pens.Red;
+                                break;
+                            case "black":
+                                draw.color = Pens.Black;
+                                break;
+                            case "blue":
+                                draw.color = Pens.Blue;
+                                break;
+                            default:
+                                draw.color = Pens.Black;
+                                break;
+
                         }
                         break;
                     default:
