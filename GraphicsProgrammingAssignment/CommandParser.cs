@@ -198,6 +198,12 @@ namespace GraphicsProgrammingAssignment
                         // Clears screen with Gray background.
                         g.Clear(System.Drawing.Colour.White);
                         break;
+                    case "reset":
+                        // Resets the location of the shape to its initial coordinate.
+                        draw.x = 0;
+                        draw.y = 0;
+                        draw.color = Pens.Black;
+                        break;
                     default:
                         break;
                 }
