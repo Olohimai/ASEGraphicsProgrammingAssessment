@@ -85,6 +85,7 @@
             this.syntaxInput.Name = "syntaxInput";
             this.syntaxInput.Size = new System.Drawing.Size(466, 31);
             this.syntaxInput.TabIndex = 5;
+            this.syntaxInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.input_KeyDown);
             // 
             // label1
             // 
