@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace GraphicsProgrammingAssignmentTest
 {
     [TestClass]
-    public class UnitTest1
+    public class GraphicsProgrammingAssignment
     {
         [TestMethod]
         public void TestMethod1()
