@@ -2,6 +2,9 @@
 
 namespace GraphicsProgrammingAssignment
 {
+    /// <summary>
+    /// 
+    /// </summary>
     class Triangle : Shapes
     {
         public void drawTriangle(Graphics g, Point point1, Point point2, Point point3)

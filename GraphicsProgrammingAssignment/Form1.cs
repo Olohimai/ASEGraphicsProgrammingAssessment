@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace GraphicsProgrammingAssignment
@@ -28,6 +29,20 @@ namespace GraphicsProgrammingAssignment
             {
                 commandParser.parseCommand(syntaxInput.Text);
             }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                using (Stream s = File.Open(saveFileDialog1.FileName, FileMode.CreateNew))
+                using (StreamWriter sw = new StreamWriter(s))
+                {
+                    sw.Write(commandText.Text);
+                }
+            }
+
         }
     }
 }
