@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.commandText = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -40,13 +41,17 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // commandText
             // 
-            this.commandText.Location = new System.Drawing.Point(60, 116);
+            this.commandText.Location = new System.Drawing.Point(50, 327);
             this.commandText.Multiline = true;
             this.commandText.Name = "commandText";
             this.commandText.Size = new System.Drawing.Size(466, 472);
@@ -55,16 +60,16 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(726, 116);
+            this.pictureBox1.Location = new System.Drawing.Point(621, 314);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(748, 472);
+            this.pictureBox1.Size = new System.Drawing.Size(792, 652);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Location = new System.Drawing.Point(60, 681);
+            this.button1.Location = new System.Drawing.Point(46, 914);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(191, 52);
             this.button1.TabIndex = 2;
@@ -75,7 +80,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(310, 681);
+            this.button2.Location = new System.Drawing.Point(300, 914);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(216, 52);
             this.button2.TabIndex = 3;
@@ -86,7 +91,7 @@
             // syntaxInput
             // 
             this.syntaxInput.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.syntaxInput.Location = new System.Drawing.Point(60, 626);
+            this.syntaxInput.Location = new System.Drawing.Point(50, 840);
             this.syntaxInput.Name = "syntaxInput";
             this.syntaxInput.Size = new System.Drawing.Size(466, 31);
             this.syntaxInput.TabIndex = 5;
@@ -95,7 +100,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 64);
+            this.label1.Location = new System.Drawing.Point(45, 282);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 25);
             this.label1.TabIndex = 6;
@@ -104,7 +109,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(726, 64);
+            this.label2.Location = new System.Drawing.Point(616, 271);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 25);
             this.label2.TabIndex = 7;
@@ -113,7 +118,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(60, 595);
+            this.label3.Location = new System.Drawing.Point(45, 812);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(389, 25);
             this.label3.TabIndex = 8;
@@ -127,7 +132,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1507, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(1507, 48);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -154,11 +159,41 @@
             this.loadToolStripMenuItem.Text = "Load Program";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(621, 43);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(294, 180);
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(946, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(435, 25);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Name: Akalumhe Olohimai Glory(C7268697)";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(946, 115);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(405, 25);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Course: Msc Information and Technology";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1507, 874);
+            this.ClientSize = new System.Drawing.Size(1507, 1003);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -174,6 +209,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,6 +229,9 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 
