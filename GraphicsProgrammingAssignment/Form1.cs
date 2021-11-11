@@ -42,7 +42,22 @@ namespace GraphicsProgrammingAssignment
                     sw.Write(commandText.Text);
                 }
             }
+        }
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Stream myStream;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if((myStream = openFileDialog1.OpenFile()) !=null)
+                    {
+                    string strfilename = openFileDialog1.FileName;
+                    string filetext = File.ReadAllText(strfilename);
+                    //MessageBox.Show(strfilename);
+                    commandText.Text = filetext;
+                }
 
+            }
         }
     }
 }
