@@ -2,6 +2,9 @@
 
 namespace GraphicsProgrammingAssignment
 {
+    /// <summary>
+    /// 
+    /// </summary>
     class Circle : Shapes
     {
         public void DrawCircle(Graphics g, int radius)
@@ -18,7 +21,11 @@ namespace GraphicsProgrammingAssignment
                 g.DrawEllipse(color, x, y, radius, radius);
             }
         }
-         public Circle(Shapes s)
+        /// <summary>
+        /// This method will parse a given command and outs the required shape on success:
+        /// </summary>
+        /// <param name="s"> </param>
+        public Circle(Shapes s)
         {
             //Calls Draw class and sets the parameters of the Shape.
             this.x = s.x;

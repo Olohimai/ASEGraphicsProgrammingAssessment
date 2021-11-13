@@ -22,7 +22,6 @@ namespace GraphicsProgrammingAssignment
         {
             commandParser.parseCommand(syntaxInput.Text);
         }
-
         private void input_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter)

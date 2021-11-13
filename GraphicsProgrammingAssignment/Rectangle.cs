@@ -2,6 +2,9 @@
 
 namespace GraphicsProgrammingAssignment
 {
+    /// <summary>
+    /// 
+    /// </summary>
     class Rectangle : Shapes
     {
         public void drawRectangle(Graphics g, int width, int height)

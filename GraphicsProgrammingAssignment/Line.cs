@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace GraphicsProgrammingAssignment
 {
+    /// <summary>
+    /// 
+    /// </summary>
     class Line : Shapes
     { 
         public void drawLine(Graphics g, int x, int y)

@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace GraphicsProgrammingAssignmentTest
 {
@@ -6,8 +7,17 @@ namespace GraphicsProgrammingAssignmentTest
     public class GraphicsProgrammingAssignment
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ValidCoordinatesToDrawCircle()
         {
+             //Arrange
+
+            //Acts
+
+           //Assert
+        }
+        public void DrawYellowCircle()
+        {
+            DrawingTest(Color.Yellow, Shape.Circle);
         }
     }
 }
