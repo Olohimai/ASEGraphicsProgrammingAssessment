@@ -3,7 +3,7 @@
 namespace GraphicsProgrammingAssignment
 {
     /// <summary>
-    ///The x, y,pen color, solid brush and fill are the properties of the class Shapes 
+    /// The x, y,pen color, solid brush and fill are the properties of the class Shapes 
     /// </summary>
     class Shapes
     {

@@ -7,6 +7,12 @@ namespace GraphicsProgrammingAssignment
     /// </summary>
     class Rectangle : Shapes
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="g">a graphics class to draw shape to </param>
+        /// <param name="width">takes width of the rectangle</param>
+        /// <param name="height">takes the height of the rectangle</param>
         public void drawRectangle(Graphics g, int width, int height)
         {
             if (fill)
@@ -20,6 +26,10 @@ namespace GraphicsProgrammingAssignment
                 g.DrawRectangle(color, x, y, width, height);
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="s"></param>
         public Rectangle(Shapes s)
         {
             this.x = s.x;

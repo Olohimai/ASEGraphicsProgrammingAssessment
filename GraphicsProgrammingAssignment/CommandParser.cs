@@ -71,7 +71,7 @@ namespace GraphicsProgrammingAssignment
         }
         /// <summary>
         /// A method,that run the users command which is  separated by a newline.
-        // function to execute a command enterd by the user contained within a string
+        /// function to execute a command enterd by the user contained within a string
         /// </summary>
         /// <param name="userInput">A string containing a number to convert.</param>
         public void parseCommand(string userInput)
@@ -224,16 +224,37 @@ namespace GraphicsProgrammingAssignment
                         }
                         break;
                     case "fill":
-                        switch (commandParts[1])
-                        {
+                       /* {
                             case "on":  // case Fill shape is on it fills the shape
                                 draw.fill = true;
                                 break;
                             case "off": // case Fill shape is off 
                                 draw.fill = false;
                                 break;
+                        }*/
+                            if (commandParts.Length == 2)
+                        {
+                            // parse the argument and set the state appropriatley
+                            if (commandParts[1].ToLower() == "on")
+                            {
+                                draw.fill = true;
+                            }
+                            else if (commandParts[1].ToLower() == "off")
+                            {
+                                draw.fill = false;
+                            }
+                            // if the fill state is not valid throw an exception
+                            else
+                            {
+                                throw new Exception("Invalid operand for fill state command");
+                            }
                         }
-                        break;
+                        else
+                        {
+                            throw new Exception("Invalid number of operands");
+                        }
+                
+                            break;
                     case "pen":
                         switch (commandParts[1].ToLower())
                         {

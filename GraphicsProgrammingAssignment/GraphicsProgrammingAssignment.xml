@@ -34,21 +34,28 @@
             </summary>
         </member>
         <member name="M:GraphicsProgrammingAssignment.CommandParser.ParsePoint(System.String)">
-            <summary> this method shows a  ParsePoint method  whereby the coordinates entered by the user are seperated by a comma
-            using split function if the lenght of points is not equals to 2 it throws an exception if its less
+            <summary> this method shows a  ParsePoint method  whereby the coordinates entered by 
+            the user are seperated by a comma  using split function if the lenght of points is not
+            equals to 2 it throws an exception if its less
             </summary>
             <param name="point">A string containing a number to convert.</param>
             <returns>The value of x and y coordinates</returns>
             <exception cref="T:System.Exception">Thrown when one parameter is not equals to 2</exception>
         </member>
-        <member name="M:GraphicsProgrammingAssignment.CommandParser.ParseMultiPoint(System.String)">
+        <member name="M:GraphicsProgrammingAssignment.CommandParser.ParseTriangle(System.String)">
             <summary>
             
             </summary>
             <param name="point"></param>
             <returns></returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:GraphicsProgrammingAssignment.CommandParser.parseCommand(System.String)" -->
+        <member name="M:GraphicsProgrammingAssignment.CommandParser.parseCommand(System.String)">
+            <summary>
+            A method,that run the users command which is  separated by a newline.
+            function to execute a command enterd by the user contained within a string
+            </summary>
+            <param name="userInput">A string containing a number to convert.</param>
+        </member>
         <member name="F:GraphicsProgrammingAssignment.Form1.components">
             <summary>
             Required designer variable.
@@ -81,10 +88,24 @@
             
             </summary>
         </member>
+        <member name="M:GraphicsProgrammingAssignment.Rectangle.drawRectangle(System.Drawing.Graphics,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="g">a graphics class to draw shape to </param>
+            <param name="width">takes width of the rectangle</param>
+            <param name="height">takes the height of the rectangle</param>
+        </member>
+        <member name="M:GraphicsProgrammingAssignment.Rectangle.#ctor(GraphicsProgrammingAssignment.Shapes)">
+            <summary>
+            
+            </summary>
+            <param name="s"></param>
+        </member>
         <member name="T:GraphicsProgrammingAssignment.Shapes">
-             <summary>
+            <summary>
             The x, y,pen color, solid brush and fill are the properties of the class Shapes 
-             </summary>
+            </summary>
         </member>
         <member name="T:GraphicsProgrammingAssignment.Triangle">
             <summary>
