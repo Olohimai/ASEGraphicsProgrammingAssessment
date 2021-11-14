@@ -224,37 +224,17 @@ namespace GraphicsProgrammingAssignment
                         }
                         break;
                     case "fill":
-                       /* {
+                        switch (commandParts[1].ToLower())
+                        {
                             case "on":  // case Fill shape is on it fills the shape
                                 draw.fill = true;
                                 break;
                             case "off": // case Fill shape is off 
                                 draw.fill = false;
                                 break;
-                        }*/
-                            if (commandParts.Length == 2)
-                        {
-                            // parse the argument and set the state appropriatley
-                            if (commandParts[1].ToLower() == "on")
-                            {
-                                draw.fill = true;
-                            }
-                            else if (commandParts[1].ToLower() == "off")
-                            {
-                                draw.fill = false;
-                            }
-                            // if the fill state is not valid throw an exception
-                            else
-                            {
-                                throw new Exception("Invalid operand for fill state command");
-                            }
                         }
-                        else
-                        {
-                            throw new Exception("Invalid number of operands");
-                        }
+                break;  
                 
-                            break;
                     case "pen":
                         switch (commandParts[1].ToLower())
                         {

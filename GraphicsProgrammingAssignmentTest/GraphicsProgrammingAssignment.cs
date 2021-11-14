@@ -1,24 +1,32 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using GraphicsProgrammingAssignment; 
+using GraphicsProgrammingAssignment;
 
 namespace GraphicsProgrammingAssignmentTest
 {
-    /* 
-  [TestClass]
-public class GraphicsProgrammingAssignment
-  {
-      static Triangle triangle;
-      [ClassInitialize]
-  public static void setup(TestContext testContext) {
-      triangle = new Triangle();
-  }
-      [TestMethod]
-      public void ItShouldDrawTriangle1()
-      {
-          triangle.DrawTriangle1();
-          Assert.IsTrue(true);
-      }
 
-  }*/
+    [TestClass]
+    public class GraphicsProgrammingAssignmentTest
+    {
+
+        [TestMethod]
+         public void ItShouldDrawTriangle1() { }
+        /*{
+
+               Bitmap OutputBitmap = new Bitmap(450, 350);
+               CommandParser MyCommandParser;
+               CommandParser = new CommandParser(Graphics.FromImage(OutputBitmap));
+               try
+               {
+                   MyCommandParser.DrawLine(Color.FromName("Black"), 50, 50);
+
+               }
+               catch (Exception ex)
+               {
+                   StringAssert.Contains(ex.Message,"INVALID PARAMETER")
+               }
+
+         }*/
+
+    }
 }
