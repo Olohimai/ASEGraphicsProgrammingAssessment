@@ -2,11 +2,13 @@
 
 namespace GraphicsProgrammingAssignment
 {
-    /// <summary>
-    /// 
-    /// </summary>
     class Circle : Shapes
     {
+        /// <summary>
+        /// Draw a circle using a radius and fills the interior when fill is on
+        /// </summary>
+        /// <param name="g">graphics</param>
+        /// <param name="radius">radius of circle</param>
         public void DrawCircle(Graphics g, int radius)
         {
             if (fill)
@@ -24,7 +26,7 @@ namespace GraphicsProgrammingAssignment
         /// <summary>
         /// This method will parse a given command and outs the required shape on success:
         /// </summary>
-        /// <param name="s"> </param>
+        /// <param name="s">shapes </param>
         public Circle(Shapes s)
         {
             //Calls Draw class and sets the parameters of the Shape.

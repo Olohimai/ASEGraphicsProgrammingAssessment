@@ -7,11 +7,15 @@ using System.Threading.Tasks;
 
 namespace GraphicsProgrammingAssignment
 {
-    /// <summary>
-    /// 
-    /// </summary>
+    
     class Line : Shapes
-    { 
+    {
+        /// <summary>
+        /// Constructor to  Drawline a on the picturebox
+        /// </summary>
+        /// <param name="g">graphics</param>
+        /// <param name="x">frist point of line</param>
+        /// <param name="y">end point of line</param>
         public void drawLine(Graphics g, int x, int y)
         {
 

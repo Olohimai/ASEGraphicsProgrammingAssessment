@@ -2,9 +2,6 @@
 
 namespace GraphicsProgrammingAssignment
 {
-    /// <summary>
-    /// 
-    /// </summary>
     class Triangle : Shapes
     {
         /// <summary>

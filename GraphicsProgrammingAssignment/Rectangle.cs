@@ -8,7 +8,7 @@ namespace GraphicsProgrammingAssignment
     class Rectangle : Shapes
     {
         /// <summary>
-        /// 
+        ///   Draw a Rectangle using an array of points and fills the interior when fill is on
         /// </summary>
         /// <param name="g">a graphics class to draw shape to </param>
         /// <param name="width">takes width of the rectangle</param>
