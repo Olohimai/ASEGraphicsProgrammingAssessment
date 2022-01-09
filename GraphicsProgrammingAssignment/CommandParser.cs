@@ -67,11 +67,7 @@ namespace GraphicsProgrammingAssignment
                 throw new Exception();
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="point"></param>
-        /// <returns></returns>
+      
         public Point ParseTriangle(string point)
         {
             var (x, y) = ParsePoint(point);
