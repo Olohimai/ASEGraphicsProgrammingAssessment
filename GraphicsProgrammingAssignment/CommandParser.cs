@@ -375,7 +375,7 @@ namespace GraphicsProgrammingAssignment
 
                             else
                             {
-                                MessageBox.Show("Invalid command entered.");
+                                MessageBox.Show("Invalid command entered. enter a valid command");
 
                             }
                             break;
