@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -9,6 +11,7 @@ namespace GraphicsProgrammingAssignment
     /// </summary>
     public class CommandParser
     {
+        Dictionary<string, int> variables;
         Bitmap bitmap;
         Graphics g;
         PictureBox pictureBox;
@@ -21,6 +24,7 @@ namespace GraphicsProgrammingAssignment
         /// used to display graphics from a bitmap</param>
         public CommandParser(PictureBox pictureBox)
         {
+            variables = new Dictionary<string, int>();
             bitmap = new Bitmap(pictureBox.Size.Width, pictureBox.Size.Height);
             g = Graphics.FromImage(bitmap);
             this.pictureBox = pictureBox;
@@ -49,7 +53,7 @@ namespace GraphicsProgrammingAssignment
                 throw new Exception();
             }
 
-            if (int.TryParse(points[0], out int x) && int.TryParse(points[1], out int y))
+            if (ValueEvaluate(points[0], out int x) && ValueEvaluate(points[1], out int y))
             {
                 return (x, y);
             }
@@ -68,6 +72,35 @@ namespace GraphicsProgrammingAssignment
         {
             var (x, y) = ParsePoint(point);
             return new Point(x, y);
+        }
+        public bool ValueEvaluate(string input, out int result)
+        {
+            if (int.TryParse(input, out int value))
+            {
+                result = value;
+                return true;
+            }
+            else if (variables.ContainsKey(input))
+            {
+                result = variables[input];
+                return true; 
+            }
+            else
+            {
+                result = 0;
+                return false;
+            }
+        }
+        public string varReplace (string equation)
+        {
+            foreach (KeyValuePair<string, int>variable in variables)
+            {
+                if (equation.Contains(variable.Key))
+                {
+                    equation = equation.Replace(variable.Key, variable.Value.ToString());
+                }
+            }
+            return equation;
         }
         /// <summary>
         /// A method,that run the users command which is  separated by a newline.
@@ -95,7 +128,7 @@ namespace GraphicsProgrammingAssignment
                         {
                             // Create a position for the circle TryParse coordinates of points using a helper function.
                             (int, int) point = ParsePoint(commandParts[1]);
-                            if (int.TryParse(commandParts[2], out int radius))
+                            if (ValueEvaluate(commandParts[2], out int radius))
                             {
                                 new Circle(draw).DrawCircle(g, radius);
                             }
@@ -111,7 +144,7 @@ namespace GraphicsProgrammingAssignment
 
                         else if (commandParts.Length == 2)
                         {
-                            if (int.TryParse(commandParts[1], out int radius))
+                            if (ValueEvaluate(commandParts[1], out int radius))
                             {
                                 new Circle(draw).DrawCircle(g, radius);
                             }
@@ -157,7 +190,7 @@ namespace GraphicsProgrammingAssignment
                         {
                             // parse the width and height and throw an exception if they are invalid 
                             // Create a position for the rectangle TryParse coordinates of points using a helper function.
-                            if (int.TryParse(commandParts[1], out int x) && int.TryParse(commandParts[2], out int y))
+                            if (ValueEvaluate(commandParts[1], out int x) && ValueEvaluate(commandParts[2], out int y))
                                 new Rectangle(draw).drawRectangle(g, x, y);
 
                             else
@@ -184,7 +217,7 @@ namespace GraphicsProgrammingAssignment
                     case "drawto":
                         if (commandParts.Length == 3)
                         {
-                            if (int.TryParse(commandParts[1], out int x) && int.TryParse(commandParts[2], out int y))
+                            if (ValueEvaluate(commandParts[1], out int x) && ValueEvaluate(commandParts[2], out int y))
                                 new Line(draw).drawLine(g, x, y);
 
 
@@ -267,7 +300,36 @@ namespace GraphicsProgrammingAssignment
                         draw.color = Pens.Black;
                         break;
                     default:
-                        MessageBox.Show("invalid Parameter Entered, enter a valid Parameter");
+                        if (userInputArray[i].Contains("="))
+                        {
+                            int position = userInputArray[i].IndexOf("=");
+                            string variableName = userInputArray[i].Substring(0, position).Trim();
+                            string variableString = userInputArray[i].Substring(position + 1).Trim();
+                            if (int.TryParse(variableString, out int value))
+                            {
+                                variables[variableName] = value;
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    DataTable dt = new DataTable();
+                                    variableString = varReplace(variableString);
+                                    value = Convert.ToInt32(dt.Compute(variableString, ""));
+                                    variables[variableName] = value;
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("invalid variable");
+                                }
+                            }
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("invalid Parameter Entered, enter a valid Parameter");
+
+                        }
                         break;
                 }
             }

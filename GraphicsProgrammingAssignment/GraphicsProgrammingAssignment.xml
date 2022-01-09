@@ -28,8 +28,7 @@
             and gets a graphics object from the new image
             </summary>
             <param name="pictureBox">To refer to the fields of the current class the PictureBox is 
-            used to display graphics from a bitmap
-            </param>
+            used to display graphics from a bitmap</param>
         </member>
         <member name="M:GraphicsProgrammingAssignment.CommandParser.draw">
             <summary>
@@ -57,7 +56,7 @@
             A method,that run the users command which is  separated by a newline.
             function to execute a command enterd by the user contained within a string
             </summary>
-            <param name="line">A string containing a number to convert.</param>
+            <param name="userInput">A string containing a number to convert.</param>
         </member>
         <member name="F:GraphicsProgrammingAssignment.Form1.components">
             <summary>
