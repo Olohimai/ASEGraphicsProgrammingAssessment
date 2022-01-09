@@ -52,7 +52,8 @@
             this.commandText.Multiline = true;
             this.commandText.Name = "commandText";
             this.commandText.Size = new System.Drawing.Size(466, 472);
-            this.commandText.TabIndex = 0;
+            this.commandText.TabIndex = 1;
+            this.commandText.AcceptsTab = true;
             // 
             // pictureBox1
             // 
