@@ -106,6 +106,11 @@ namespace GraphicsProgrammingAssignment
             }
             return equation;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="equation"></param>
+        /// <returns></returns>
         public bool evaluateCondition (string equation)
         {
             equation = varReplace(equation);
@@ -134,6 +139,7 @@ namespace GraphicsProgrammingAssignment
             draw.y = 0;//initial y-coordinate axis
             draw.color = Pens.Black; //sets default color black 
 
+            // method that shows the while loop and endwhile method
             for (int i = 0; i < userInputArray.Length; i++)
             {
                 userInputArray[i] = userInputArray[i].Trim();
@@ -344,6 +350,8 @@ namespace GraphicsProgrammingAssignment
                             draw.color = Pens.Black;
                             break;
                         default:
+                            //Reports the  index of the first occurrence of a specified  character or string within this instance.
+                            //The method returns invalid variable is not found in this instance.
                             if (userInputArray[i].Contains("="))
                             {
                                 int position = userInputArray[i].IndexOf("=");
